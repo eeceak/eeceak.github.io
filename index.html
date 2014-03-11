@@ -41,7 +41,7 @@
     </div>
 
     <div data-role="content">
-        <table data-role="table" id="my-table" data-mode="reflow">
+        <table data-role="table" id="details_table" data-mode="reflow">
             <thead>
             <tr>
                 <th>Idade</th>
@@ -201,6 +201,8 @@
         $('#alergias').html( dados[id].alergias );
         $('#unidade').html( dados[id].unidade );
         $('#turma').html( dados[id].turma );
+
+        $('#details_table').table( "refresh" );
     }
 
     document.addEventListener('DOMContentLoaded', function () { setTimeout(loaded, 0); }, false);
