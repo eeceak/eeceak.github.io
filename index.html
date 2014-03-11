@@ -12,74 +12,199 @@
 
 <div data-role="page">
 
-	<div data-role="header">
-		<h1>My Header</h1>
-	</div>
-	
-	<div data-role="content">
-		<ul data-role="listview" data-inset="true" data-filter="true" 
-		data-filter-reveal="false" data-filter-placeholder="Type to search...">
-		<li><a href="#1">Raymond Camden</a></li>
-		<li><a href="scott.html">Scott Stroz</a></li>
-		<li><a href="todd.html">Todd Sharp</a></li>
-		<li><a href="dave.html">Dave Ferguson</a></li>
-		<!-- following links all share the same url to keep things simple -->
-		<li><a href="dave.html">Jeanne Camden</a></li>
-		<li><a href="dave.html">Alexson Boudreaux</a></li>
-		<li><a href="dave.html">Ben Forta</a></li>
-		<li><a href="dave.html">Rachel Luxemburg</a></li>
-		<li><a href="dave.html">Lynn Camden</a></li>
-		<li><a href="dave.html">Noah Camden</a></li>
-		<li><a href="dave.html">Jacob Camden</a></li>
-		<li><a href="dave.html">Luke Skywalker</a></li>
-		<li><a href="dave.html">Anakin Skywalker</a></li>
-		<li><a href="dave.html">Moonpie Rockhead</a></li>
-		<li><a href="dave.html">Lisa Spacestation</a></li>
-		<li><a href="dave.html">Terrible Ricky</a></li>
-		<li><a href="dave.html">Han Solo</a></li>
-		</ul>
-	</div>
+    <div data-role="header">
+        <h1>My Header</h1>
+    </div>
 
-	<div data-role="footer">
-		<h4>My Footer</h4>
-	</div>
-		
+    <div data-role="content">
+        <ul id="userlist" data-role="listview" data-inset="true" data-filter="true"
+            data-filter-reveal="false" data-filter-placeholder="Type to search...">
+            <!--
+            <li><a href="#aluno1">Raymond Camden</a><span class="ui-li-count">99 Anos SEG</span></li>
+            <li><a href="scott.html">Scott Stroz</a></li>
+            <li><a href="todd.html">Todd Sharp</a></li>
+            <li><a href="dave.html">Dave Ferguson</a></li>
+            -->
+        </ul>
+    </div>
+
+    <div data-role="footer">
+        <h4>My Footer</h4>
+    </div>
+
 </div>
-    
-<div data-role="page" id="1">
 
-	<div data-role="header">
-		<h1>My Header</h1>
-	</div>
-	
-	<div data-role="content">
-		<ul data-role="listview" data-inset="true">
-		<li><a href="ray.html">Raymond Camden</a></li>
-		<li><a href="scott.html">Scott Stroz</a></li>
-		<li><a href="todd.html">Todd Sharp</a></li>
-		<li><a href="dave.html">Dave Ferguson</a></li>
-		<!-- following links all share the same url to keep things simple -->
-		<li><a href="dave.html">Jeanne Camden</a></li>
-		<li><a href="dave.html">Alexson Boudreaux</a></li>
-		<li><a href="dave.html">Ben Forta</a></li>
-		<li><a href="dave.html">Rachel Luxemburg</a></li>
-		<li><a href="dave.html">Lynn Camden</a></li>
-		<li><a href="dave.html">Noah Camden</a></li>
-		<li><a href="dave.html">Jacob Camden</a></li>
-		<li><a href="dave.html">Luke Skywalker</a></li>
-		<li><a href="dave.html">Anakin Skywalker</a></li>
-		<li><a href="dave.html">Moonpie Rockhead</a></li>
-		<li><a href="dave.html">Lisa Spacestation</a></li>
-		<li><a href="dave.html">Terrible Ricky</a></li>
-		<li><a href="dave.html">Han Solo</a></li>
-		</ul>
-	</div>
+<div data-role="page" id="aluno_details">
 
-	<div data-role="footer">
-		<h4>My Footer</h4>
-	</div>
-		
+    <div data-role="header">
+        <h1 id="nome_aluno">Raymond Camden</h1>
+    </div>
+
+    <div data-role="content">
+        <table data-role="table" id="my-table" data-mode="reflow">
+            <thead>
+            <tr>
+                <th>Idade</th>
+                <th>Data de Nascimento</th>
+                <th>Pai</th>
+                <th>Mae</th>
+                <th>Telefones</th>
+                <th>&nbsp;</th>
+                <th>&nbsp;</th>
+                <th>Quem traz</th>
+                <th>Quem retira</th>
+                <th>Restri&ccedil;&otilde;es Alim.</th>
+                <th>Alergias</th>
+                <th>Unidade</th>
+                <th>Turma</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td id="idade"></td>
+                <td id="dt_nasc"></td>
+                <td id="nome_pai"></td>
+                <td id="nome_mae"></td>
+                <td id="fone1"></td>
+                <td id="fone2"></td>
+                <td id="fone3"></td>
+                <td id="quem_traz"></td>
+                <td id="retirar"></td>
+                <td id="alimentos"></td>
+                <td id="alergias"></td>
+                <td id="unidade"></td>
+                <td id="turma"></td>
+                <!--<td><a href="foo.com" data-rel="external">Citizen Kane</a></td>
+                <td>1941</td>
+                <td>100%</td>
+                <td>74</td>-->
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div data-role="footer">
+        <h4>My Footer</h4>
+    </div>
+
 </div>
+
+<script>
+    var dados = [
+        {
+            "nome_aluno":"Gabriela Teste",
+            "dt_nasc":"26/06/2003",
+            "idade":100,
+            "nome_mae":"Marileide Teste",
+            "nome_pai":"Luis Gustavo Teste",
+            "fone1":"3333-2222",
+            "fone2":"99999-1111",
+            "fone3":"",
+            "quem_traz":"Os pais",
+            "retirar":"Os pais, mesmo sendo maiores",
+            "atividade":"3o Ano",
+            "unidade":"Segunda",
+            "turma":"10 a 12 anos",
+            "alimentos":"Nenhuma",
+            "alergias":"Nenhuma"
+        },
+        {
+            "nome_aluno":"Thomas Teste",
+            "dt_nasc":"02/01/2006",
+            "idade":80,
+            "nome_mae":"Daniela Teste",
+            "nome_pai":"Vinicius Teste",
+            "fone1":"3333-2222",
+            "fone2":"99991111",
+            "fone3":"",
+            "quem_traz":"Os pais",
+            "retirar":"",
+            "atividade":"1o Ano",
+            "unidade":"Domingo",
+            "turma":"8 a 9 anos",
+            "alimentos":"Nenhuma",
+            "alergias":"Picade de Abelha"
+        }
+    ];
+
+    function loaded() {
+
+        for(var i=0; i< dados.length; i++){
+            //Calcula Idade
+            var aniv = dados[i].dt_nasc.split("/");
+            dados[i].idade = calculate_age(aniv[1], aniv[0], aniv[2]);
+            var dia = '';
+            if(dados[i].unidade.toLowerCase() == 'segunda'){
+                dia = ' SEG';
+            } else if(dados[i].unidade.toLowerCase() == 'domingo'){
+                dia = ' DOM';
+            } else if(dados[i].unidade.toLowerCase() == 'quarta'){
+                dia = ' QUA';
+            }
+            var user = '<li id_aluno="'+i+'">';
+            user += '<a href="#aluno_details">'+dados[i].nome_aluno+'</a>';
+            user += '<span class="ui-li-count">'+dados[i].idade+' Anos'+dia+'</span></li>';
+            $('#userlist').append(user);
+        }
+
+        $('#userlist').listview( "refresh" );
+        $('#userlist li').on('click', function(e){
+            var id_aluno = $(this).attr('id_aluno');
+            set_details(id_aluno);
+            //alert( $(this).attr('id_aluno') );
+        } );
+    }
+
+    function calculate_age(birth_month,birth_day,birth_year)
+    {
+        today_date = new Date();
+        today_year = today_date.getFullYear();
+        today_month = today_date.getMonth();
+        today_day = today_date.getDate();
+        age = today_year - birth_year;
+
+        if ( today_month < (birth_month - 1))
+        {
+            age--;
+        }
+        if (((birth_month - 1) == today_month) && (today_day < birth_day))
+        {
+            age--;
+        }
+        return age;
+    }
+
+    function set_details(id){
+        var fone1 = '';
+        if(dados[id].fone1){
+            fone1 = '<a href="tel:'+dados[id].fone1+'">'+dados[id].fone1+'</a>';
+        }
+        var fone2 = '';
+        if(dados[id].fone2){
+            fone2 = '<a href="tel:'+dados[id].fone2+'">'+dados[id].fone2+'</a>';
+        }
+        var fone3 = '';
+        if(dados[id].fone3){
+            fone3 = '<a href="tel:'+dados[id].fone3+'">'+dados[id].fone3+'</a>';
+        }
+        $('#nome_aluno').html( dados[id].nome_aluno );
+        $('#idade').html( dados[id].idade );
+        $('#dt_nasc').html( dados[id].dt_nasc );
+        $('#nome_pai').html( dados[id].nome_pai );
+        $('#nome_mae').html( dados[id].nome_mae );
+        $('#fone1').html( fone1 );
+        $('#fone2').html( fone2 );
+        $('#fone3').html( fone3 );
+        $('#quem_traz').html( dados[id].quem_traz );
+        $('#retirar').html( dados[id].retirar );
+        $('#alimentos').html( dados[id].alimentos );
+        $('#alergias').html( dados[id].alergias );
+        $('#unidade').html( dados[id].unidade );
+        $('#turma').html( dados[id].turma );
+    }
+
+    document.addEventListener('DOMContentLoaded', function () { setTimeout(loaded, 0); }, false);
+</script>
 
 </body>
 </html>
