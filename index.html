@@ -210,22 +210,22 @@
 
     function escapeHTMLEncode(str) {
         var accentStr = str;
-        accentStr = accentStr.replace(/á/g,'&aacute;');
-        accentStr = accentStr.replace(/â/g,'&acirc;');
-        accentStr = accentStr.replace(/ã/g,'&atilde;');
+        accentStr = accentStr.replace(/Ã¡/g,'&aacute;');
+        accentStr = accentStr.replace(/Ã¢/g,'&acirc;');
+        accentStr = accentStr.replace(/Ã£/g,'&atilde;');
 
-        accentStr = accentStr.replace(/é/g,'&eacute;');
-        accentStr = accentStr.replace(/ê/g,'&ecirc;');
+        accentStr = accentStr.replace(/Ã©/g,'&eacute;');
+        accentStr = accentStr.replace(/Ãª/g,'&ecirc;');
 
-        accentStr = accentStr.replace(/í/g,'&iacute;');
+        accentStr = accentStr.replace(/Ã­/g,'&iacute;');
 
-        accentStr = accentStr.replace(/ó/g,'&oacute;');
-        accentStr = accentStr.replace(/õ/g,'&otilde;');
-        accentStr = accentStr.replace(/ô/g,'&ocirc;');
+        accentStr = accentStr.replace(/Ã³/g,'&oacute;');
+        accentStr = accentStr.replace(/Ãµ/g,'&otilde;');
+        accentStr = accentStr.replace(/Ã´/g,'&ocirc;');
 
-        accentStr = accentStr.replace(/ú/g,'&uacute;');
+        accentStr = accentStr.replace(/Ãº/g,'&uacute;');
 
-        accentStr = accentStr.replace(/ç/g,'&ccedil;');
+        accentStr = accentStr.replace(/Ã§/g,'&ccedil;');
         return accentStr;
         //return $('<div/>').text(str).html();
     }
