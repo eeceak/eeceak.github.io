@@ -210,6 +210,23 @@
 
     function escapeHTMLEncode(str) {
         var accentStr = str;
+        accentStr = accentStr.replace(/á/g,'a');
+        accentStr = accentStr.replace(/â/g,'a');
+        accentStr = accentStr.replace(/ã/g,'a');
+
+        accentStr = accentStr.replace(/é/g,'e');
+        accentStr = accentStr.replace(/ê/g,'e');
+
+        accentStr = accentStr.replace(/í/g,'i');
+
+        accentStr = accentStr.replace(/ó/g,'o');
+        accentStr = accentStr.replace(/õ/g,'o');
+        accentStr = accentStr.replace(/ô/g,'o');
+
+        accentStr = accentStr.replace(/ú/g,'u');
+
+        accentStr = accentStr.replace(/ç/g,'c');
+/*
         accentStr = accentStr.replace(/á/g,'&aacute;');
         accentStr = accentStr.replace(/â/g,'&acirc;');
         accentStr = accentStr.replace(/ã/g,'&atilde;');
@@ -226,6 +243,7 @@
         accentStr = accentStr.replace(/ú/g,'&uacute;');
 
         accentStr = accentStr.replace(/ç/g,'&ccedil;');
+        */
         return accentStr;
         //return $('<div/>').text(str).html();
     }
