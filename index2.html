@@ -209,43 +209,7 @@
     }
 
     function escapeHTMLEncode(str) {
-        var accentStr = str;
-        accentStr = accentStr.replace(/á/g,'a');
-        accentStr = accentStr.replace(/â/g,'a');
-        accentStr = accentStr.replace(/ã/g,'a');
-
-        accentStr = accentStr.replace(/é/g,'e');
-        accentStr = accentStr.replace(/ê/g,'e');
-
-        accentStr = accentStr.replace(/í/g,'i');
-
-        accentStr = accentStr.replace(/ó/g,'o');
-        accentStr = accentStr.replace(/õ/g,'o');
-        accentStr = accentStr.replace(/ô/g,'o');
-
-        accentStr = accentStr.replace(/ú/g,'u');
-
-        accentStr = accentStr.replace(/ç/g,'c');
-/*
-        accentStr = accentStr.replace(/á/g,'&aacute;');
-        accentStr = accentStr.replace(/â/g,'&acirc;');
-        accentStr = accentStr.replace(/ã/g,'&atilde;');
-
-        accentStr = accentStr.replace(/é/g,'&eacute;');
-        accentStr = accentStr.replace(/ê/g,'&ecirc;');
-
-        accentStr = accentStr.replace(/í/g,'&iacute;');
-
-        accentStr = accentStr.replace(/ó/g,'&oacute;');
-        accentStr = accentStr.replace(/õ/g,'&otilde;');
-        accentStr = accentStr.replace(/ô/g,'&ocirc;');
-
-        accentStr = accentStr.replace(/ú/g,'&uacute;');
-
-        accentStr = accentStr.replace(/ç/g,'&ccedil;');
-        */
-        return accentStr;
-        //return $('<div/>').text(str).html();
+        return $('<div/>').text(str).html();
     }
 
     document.addEventListener('DOMContentLoaded', function () { setTimeout(loaded, 0); }, false);
