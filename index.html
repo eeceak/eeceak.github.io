@@ -3,6 +3,7 @@
 <head>
 <title>EE-Ceak Lista de Matriculados</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="http://dl.dropboxusercontent.com/u/21162800/eeceak/lista.js"></script>
 <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.css" />
 <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
 <script src="http://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.js"></script>
@@ -89,7 +90,7 @@
 </div>
 
 <script>
-    var dados = [
+    /*var dados = [
         {
             "nome_aluno":"Gabriela Teste",
             "dt_nasc":"26/06/2003",
@@ -124,7 +125,7 @@
             "alimentos":"Nenhuma",
             "alergias":"Picade de Abelha"
         }
-    ];
+    ];*/
 
     function loaded() {
 
@@ -141,7 +142,7 @@
                 dia = ' QUA';
             }
             var user = '<li id_aluno="'+i+'">';
-            user += '<a href="#aluno_details">'+dados[i].nome_aluno;
+            user += '<a href="#aluno_details">'+escapeHTMLEncode(dados[i].nome_aluno);
             user += '<span class="ui-li-count">'+dados[i].idade+' Anos'+dia+'</span></a></li>';
             $('#userlist').append(user);
         }
@@ -176,28 +177,28 @@
     function set_details(id){
         var fone1 = '';
         if(dados[id].fone1){
-            fone1 = '<a href="tel:'+dados[id].fone1+'">'+dados[id].fone1+'</a>';
+            fone1 = '<a href="tel:'+dados[id].fone1.replace(/\D/g,'')+'">'+dados[id].fone1+'</a>';
         }
         var fone2 = '';
         if(dados[id].fone2){
-            fone2 = '<a href="tel:'+dados[id].fone2+'">'+dados[id].fone2+'</a>';
+            fone2 = '<a href="tel:'+dados[id].fone2.replace(/\D/g,'')+'">'+dados[id].fone2+'</a>';
         }
         var fone3 = '';
         if(dados[id].fone3){
-            fone3 = '<a href="tel:'+dados[id].fone3+'">'+dados[id].fone3+'</a>';
+            fone3 = '<a href="tel:'+dados[id].fone3.replace(/\D/g,'')+'">'+dados[id].fone3+'</a>';
         }
-        $('#nome_aluno').html( dados[id].nome_aluno );
+        $('#nome_aluno').html( escapeHTMLEncode(dados[id].nome_aluno) );
         $('#idade').html( dados[id].idade );
         $('#dt_nasc').html( dados[id].dt_nasc );
-        $('#nome_pai').html( dados[id].nome_pai );
-        $('#nome_mae').html( dados[id].nome_mae );
+        $('#nome_pai').html( escapeHTMLEncode(dados[id].nome_pai) );
+        $('#nome_mae').html( escapeHTMLEncode(dados[id].nome_mae) );
         $('#fone1').html( fone1 );
         $('#fone2').html( fone2 );
         $('#fone3').html( fone3 );
-        $('#quem_traz').html( dados[id].quem_traz );
-        $('#retirar').html( dados[id].retirar );
-        $('#alimentos').html( dados[id].alimentos );
-        $('#alergias').html( dados[id].alergias );
+        $('#quem_traz').html( escapeHTMLEncode(dados[id].quem_traz) );
+        $('#retirar').html( escapeHTMLEncode(dados[id].retirar) );
+        $('#alimentos').html( escapeHTMLEncode(dados[id].alimentos) );
+        $('#alergias').html( escapeHTMLEncode(dados[id].alergias) );
         $('#unidade').html( dados[id].unidade );
         $('#turma').html( dados[id].turma );
         try {
@@ -205,6 +206,11 @@
         } catch (e){
             console.log(e.message);
         }
+    }
+
+    function escapeHTMLEncode(str) {
+        return str;
+        //return $('<div/>').text(str).html(); No need... just make sure the files are enconded iso...
     }
 
     document.addEventListener('DOMContentLoaded', function () { setTimeout(loaded, 0); }, false);
