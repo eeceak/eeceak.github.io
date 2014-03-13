@@ -209,8 +209,7 @@
     }
 
     function escapeHTMLEncode(str) {
-        return str;
-        //return $('<div/>').text(str).html(); No need... just make sure the files are enconded iso...
+        return $('<div/>').text(str).html();
     }
 
     document.addEventListener('DOMContentLoaded', function () { setTimeout(loaded, 0); }, false);
